@@ -1,4 +1,4 @@
-# valeur de MEDV : 25.5666 (prédiction = 25.5666)
+
 curl -X POST -H "Content-Type: application/json" -d '{	"CRIM"     	: "100"	,
 														"ZN"     	: "0.0"		,
 														"INDUS"    	: "100"	,
@@ -13,3 +13,18 @@ curl -X POST -H "Content-Type: application/json" -d '{	"CRIM"     	: "100"	,
 														"B"     	: "396.9"	,
 														"LSTAT"    	: "14"	,
 														"MEDV"     	: "-1"  }' http://127.0.0.1:8000/predict/
+
+curl -X POST -H "Content-Type: application/json" -d '{	"CRIM"     	: "0.02729",
+                                                        "ZN"     	: "0.00000",
+                                                        "INDUS"    	: "7.07000",
+                                                        "CHAS"     	: "0.00000",
+                                                        "NOX"     	: "0.46900",
+                                                        "RM"     	: "7.18500",
+                                                        "AGE"     	: "61.10000",
+                                                        "DIS"     	: "4.96710",
+                                                        "RAD"     	: "2.00000",
+                                                        "TAX"     	: "242.00000",
+                                                        "PTRATIO"   : "17.80000",
+                                                        "B"     	: "392.83000",
+                                                        "LSTAT"    	: "4.03000",
+                                                        "MEDV"     	: "-1"  }' http://127.0.0.1:8000/predict/

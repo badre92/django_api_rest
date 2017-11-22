@@ -20,9 +20,6 @@ def predict(request):
         data        = JSONParser().parse(request)
         serializer  = HouseSerializer(data=data)
         if serializer.is_valid():
-            import os
-            cwd = os.getcwd()
-            print(cwd)
             from sklearn.externals import joblib
             colonnes            = ["CRIM"   , "ZN"  , "INDUS"   , "CHAS", "NOX"    , "RM",
                                    "AGE"    , "DIS" , "RAD"     , "TAX" , "PTRATIO", "B" ,

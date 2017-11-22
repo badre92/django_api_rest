@@ -16,7 +16,7 @@ class HouseSerializer(serializers.Serializer):
     PTRATIO = serializers.FloatField()
     B       = serializers.FloatField()
     LSTAT   = serializers.FloatField()
-    MEDV    = serializers.FloatField(allow_null=True, )
+    MEDV    = serializers.FloatField(allow_null=True)
 
     def create(self, validated_data):
         """

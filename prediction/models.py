@@ -34,7 +34,7 @@ class House(models.Model):
     PTRATIO = models.FloatField()
     B       = models.FloatField()
     LSTAT   = models.FloatField()
-    MEDV    = models.FloatField(null=True)
+    MEDV    = models.FloatField(null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:

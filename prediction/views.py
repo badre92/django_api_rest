@@ -18,6 +18,7 @@ def predict(request):
     elif request.method == 'POST':
 
         data        = JSONParser().parse(request)
+        print(data)
         serializer  = HouseSerializer(data=data)
         if serializer.is_valid():
             from sklearn.externals import joblib
@@ -26,10 +27,13 @@ def predict(request):
                                    "LSTAT"  ]
             donnees             = [data[colonne] for colonne in colonnes]
             path_to_model       = "model_svr.pkl"
+            path_for_scaler     = "scaler.pkl"
             model               = joblib.load(path_to_model)
-            medv                = model.predict(donnees)
-            data["MEDV"]  = medv
-            serializer = HouseSerializer(data=data)
+            scaler              = joblib.load(path_for_scaler)
+            donnees_scalees     = scaler.transform(donnees)
+            medv                = model.predict(donnees_scalees)
+            data["MEDV"]        = medv
+            serializer          = HouseSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
                 return JsonResponse(serializer.data  , status=201)

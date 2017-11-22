@@ -11,8 +11,8 @@ def predict_medv(unscaled_data):
     colonnes        = ["CRIM", "ZN", "INDUS", "CHAS", "NOX", "RM",
                         "AGE", "DIS", "RAD", "TAX", "PTRATIO", "B",
                         "LSTAT"]
-    path_to_model   = "model_svr.pkl"
-    path_for_scaler = "scaler.pkl"
+    path_to_model   = "./ipynb/model_svr.pkl"
+    path_for_scaler = "./ipynb/scaler.pkl"
     unscaled_data   = [unscaled_data[colonne] for colonne in colonnes]
     model           = joblib.load(path_to_model)
     scaler          = joblib.load(path_for_scaler)

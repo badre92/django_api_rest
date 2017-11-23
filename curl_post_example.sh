@@ -1,3 +1,5 @@
+# gitlab CI token = LQvbZqRfNNkn21NwW-ci
+
 curl -X POST -H "Content-Type: application/json" -d '{	"CRIM"     	: "0.02731"	,
 														"ZN"     	: "0.0"		,
 														"INDUS"    	: "7.07"	,

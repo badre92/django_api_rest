@@ -1,3 +1,5 @@
+image:romainjouin/apirest
+
 stages:
 - build
 - test

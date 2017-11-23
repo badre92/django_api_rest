@@ -12,3 +12,6 @@ curl -X POST -H "Content-Type: application/json" -d '{	"CRIM"     	: "0.02731"	,
 														"B"     	: "396.9"	,
 														"LSTAT"    	: "9.14"	,
 														"MEDV"     	: "-1"  }' http://127.0.0.1:8000/houses/
+
+
+curl http://127.0.0.1:8000/house/1/

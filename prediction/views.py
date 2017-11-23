@@ -48,8 +48,9 @@ def house_list(request):
     """
     if request.method == 'GET':
         houses      = House.objects.all()
-        serializer  = HouseSerializer(houses, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        serializer  = HouseSerializer(houses        , many=True)
+        reponse     = JsonResponse(serializer.data  , safe=False)
+        return reponse
 
     elif request.method == 'POST':
         data        = JSONParser().parse(request)

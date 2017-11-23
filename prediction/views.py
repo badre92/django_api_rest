@@ -31,9 +31,7 @@ def predict(request):
         return JsonResponse(serializer.errors, status=400)
 
     elif request.method == 'POST':
-
         data        = JSONParser().parse(request)
-        print(data)
         serializer  = HouseSerializer(data=data)
         if serializer.is_valid():
             data["MEDV"]        = predict_medv(data)

@@ -11,6 +11,6 @@ job_test:
   stage: test
   script:
     - "source activate python35"
-    - "python /home/apirest/manage.py runserver"
+    - "python /home/apirest/manage.py test"
 
 

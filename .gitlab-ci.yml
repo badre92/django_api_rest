@@ -1,0 +1,15 @@
+stages:
+- build
+- test
+
+job_build:
+  stage: build
+  script:
+    - ""
+    - "pip install -r requirements.txt"
+
+job_test:
+  stage: test
+  script:
+    - "source activate python35"
+    - "python manage.py test"
